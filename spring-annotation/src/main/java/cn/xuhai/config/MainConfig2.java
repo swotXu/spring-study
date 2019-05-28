@@ -14,7 +14,7 @@ import cn.xuhai.config.condition.WindowsCondition;
 
 @Conditional({WindowsCondition.class})	// 满足当前条件，这个类中配置的所有bean才生效
 @Configuration //定义当前类为配置类
-@Import(Red.class)	// 导入组件，id默认是组件的全类名
+//@Import(Red.class)	// 导入组件，id默认是组件的全类名
 public class MainConfig2 {
 
 	/**
