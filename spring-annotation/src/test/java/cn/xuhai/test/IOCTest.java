@@ -9,7 +9,6 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.core.env.Environment;
 
 import cn.xuhai.bean.Person;
-import cn.xuhai.config.MainConfig;
 import cn.xuhai.config.MainConfig2;
 
 public class IOCTest {

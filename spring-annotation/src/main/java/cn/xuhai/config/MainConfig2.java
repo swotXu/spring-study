@@ -6,15 +6,17 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.Lazy;
 
+import cn.xuhai.bean.Color;
 import cn.xuhai.bean.Person;
-import cn.xuhai.bean.Red;
 import cn.xuhai.config.condition.LinuxCondition;
 import cn.xuhai.config.condition.WindowsCondition;
+import cn.xuhai.config.impselector.MyImportBeanDefinitionRegistrar;
+import cn.xuhai.config.impselector.MyImportSelector;
 
 
 @Conditional({WindowsCondition.class})	// 满足当前条件，这个类中配置的所有bean才生效
 @Configuration //定义当前类为配置类
-//@Import(Red.class)	// 导入组件，id默认是组件的全类名
+@Import({Color.class,MyImportSelector.class,MyImportBeanDefinitionRegistrar.class})	// 导入组件，id默认是组件的全类名
 public class MainConfig2 {
 
 	/**
@@ -49,6 +51,8 @@ public class MainConfig2 {
 	 * 1）包扫描+组件标注注解（@Controller/@Service/@Repostiory/@Component）
 	 * 2）@Bean[导入的第三方包里面的组件]
 	 * 3）@Import[快速给容器中导入组件]
-	 * 09
+	 * 		a、@Import:要导入的类class
+	 * 		b、ImportSelector:接口，返回需要导入的全类限定名数组
+	 * 		c、ImportBeanDefinitionRegistrar:手动注册到bean
 	 */
 }
