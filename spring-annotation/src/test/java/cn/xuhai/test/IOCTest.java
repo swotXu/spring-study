@@ -57,5 +57,14 @@ public class IOCTest {
 	@Test
 	public void testImport() {
 		printBeans(context2);
+		
+		//工厂bean
+		Object bean1 = context2.getBean("colorFactoryBean");
+		Object bean2 = context2.getBean("colorFactoryBean");
+		System.out.println("bean的类型："+bean1.getClass());
+		System.out.println(bean1 == bean2);
+		
+		Object bean3 = context2.getBean("&colorFactoryBean");
+		System.out.println("bean的类型："+bean3.getClass());
 	}
 }

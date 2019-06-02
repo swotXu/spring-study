@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.Lazy;
 
 import cn.xuhai.bean.Color;
+import cn.xuhai.bean.ColorFactoryBean;
 import cn.xuhai.bean.Person;
 import cn.xuhai.config.condition.LinuxCondition;
 import cn.xuhai.config.condition.WindowsCondition;
@@ -54,5 +55,12 @@ public class MainConfig2 {
 	 * 		a、@Import:要导入的类class
 	 * 		b、ImportSelector:接口，返回需要导入的全类限定名数组
 	 * 		c、ImportBeanDefinitionRegistrar:手动注册到bean
+	 * 4)使用spring提供的FactoryBean(工厂bena)
+	 * 		a、默认获取到的是工厂bean调用getObject创建的对象
+	 * 		b、要获取工厂bena本身，需要给id前面加'&' 如：context2.getBean("&colorFactoryBean");
 	 */
+	@Bean
+	public ColorFactoryBean colorFactoryBean() {
+		return new ColorFactoryBean();
+	}
 }

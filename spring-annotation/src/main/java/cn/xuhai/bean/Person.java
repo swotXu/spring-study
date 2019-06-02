@@ -1,13 +1,30 @@
 package cn.xuhai.bean;
 
+import org.springframework.beans.factory.annotation.Value;
+
 public class Person {
 
+	/**
+	 * 使用@Value
+	 * 1.基本数值
+	 * 2.可以使用SpEl：#{}
+	 * 3.可以写${},取出配置文件【properties】值（在运行的环境变量中的值）
+	 */
+	@Value("张三")
 	private String name;
+	@Value("#{20-2}")
 	private Integer age;
+	@Value("${person.nickName}")
+	private String nickName;
 	
+	public String getNickName() {
+		return nickName;
+	}
+	public void setNickName(String nickName) {
+		this.nickName = nickName;
+	}
 	public Person() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	public Person(String name, Integer age) {
 		super();
@@ -30,6 +47,6 @@ public class Person {
 	
 	@Override
 	public String toString() {
-		return "Person [name=" + name + ", age=" + age + "]";
+		return "Person [name=" + name + ", age=" + age + ", nickName=" + nickName + "]";
 	}
 }
