@@ -4,6 +4,9 @@ import org.junit.Before;
 import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import cn.xuhai.bean.Blue;
+import cn.xuhai.bean.Boss;
+import cn.xuhai.bean.Car;
 import cn.xuhai.config.MainConfigOfAutowired;
 import cn.xuhai.web.dao.MyDao;
 import cn.xuhai.web.service.MyService;
@@ -23,6 +26,18 @@ public class IOCTest_Autowired {
 		
 		MyDao bean2 = context.getBean(MyDao.class);
 		System.out.println(bean2);
+		//¹Ø±ÕÈÝÆ÷
+		context.close();
+	}
+	
+	@Test
+	public void test02() {
+		Boss boss = context.getBean(Boss.class);
+		System.out.println(boss);
+		
+		Car car = context.getBean(Car.class);
+
+		System.out.println(boss.getCar() == car);
 		//¹Ø±ÕÈÝÆ÷
 		context.close();
 	}

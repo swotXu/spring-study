@@ -34,9 +34,13 @@ import cn.xuhai.web.dao.MyDao;
  * 
  * AutowiredAnnotationBeanPostProcessor：解析完成自动装配功能的
  * 
+ * 3)@Autowired：构造器，参数，方法，属性都能使用
+ * 		a.标注在方法位置
+ * 		b.标注在构造器位置
+ * 		c.标注在参数位置
  * @author apink
  */
-@ComponentScan({"cn.xuhai.web.controller","cn.xuhai.web.service","cn.xuhai.web.dao"})
+@ComponentScan({"cn.xuhai.web.controller","cn.xuhai.web.service","cn.xuhai.web.dao","cn.xuhai.bean"})
 @Configuration
 public class MainConfigOfAutowired {
 	
