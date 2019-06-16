@@ -38,6 +38,10 @@ import cn.xuhai.web.dao.MyDao;
  * 		a.标注在方法位置
  * 		b.标注在构造器位置
  * 		c.标注在参数位置
+ * 4）自定义组件使用Spring容器底层的组件(ApplicationContext、BeanFactory)：
+ * 		自定义组件实现xxxAware：在创建对象的时候，会调用接口规定的方法注入相关组件
+ * 		xxxAware：功能使用xxxAwareProcessor前置处理器实现注入
+ * 				ApplicationContextAware => ApplicationContextAwareProcessor
  * @author apink
  */
 @ComponentScan({"cn.xuhai.web.controller","cn.xuhai.web.service","cn.xuhai.web.dao","cn.xuhai.bean"})

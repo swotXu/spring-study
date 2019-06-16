@@ -38,6 +38,8 @@ public class IOCTest_Autowired {
 		Car car = context.getBean(Car.class);
 
 		System.out.println(boss.getCar() == car);
+		
+		System.out.println(context);
 		//¹Ø±ÕÈÝÆ÷
 		context.close();
 	}
