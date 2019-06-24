@@ -12,6 +12,7 @@ public class MyImportBeanDefinitionRegistrar implements ImportBeanDefinitionRegi
 	/**
 	 * AnnotationMetadata:当前标注@Import注解的类的所有注解信息
 	 * BeanDefinitionRegistry: BeanDefinition注册类
+	 * BeanDefinitionRegistry.registerBeanDefinition 手动注册
 	 */
 	@Override
 	public void registerBeanDefinitions(AnnotationMetadata importingClassMetadata, BeanDefinitionRegistry registry) {
