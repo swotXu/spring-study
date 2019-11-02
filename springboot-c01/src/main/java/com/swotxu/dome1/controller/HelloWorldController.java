@@ -23,7 +23,7 @@ public class HelloWorldController {
 		return map;
 	}
 	
-	public static void main(String[] args) {
-		SpringApplication.run(HelloWorldController.class, args);
-	}
+//	public static void main(String[] args) {
+//		SpringApplication.run(HelloWorldController.class, args);
+//	}
 }
