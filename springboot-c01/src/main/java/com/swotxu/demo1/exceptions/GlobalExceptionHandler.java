@@ -1,4 +1,4 @@
-package com.swotxu.dome1.exceptions;
+package com.swotxu.demo1.exceptions;
 
 import java.util.HashMap;
 import java.util.Map;

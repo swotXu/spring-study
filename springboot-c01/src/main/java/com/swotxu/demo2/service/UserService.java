@@ -15,13 +15,13 @@ import com.swotxu.demo2.entity.UserJpa;
 
 @Service
 public class UserService {
-	@Autowired
+	@Autowired(required=true)
 	private JdbcTemplate jdbcTemplate;
 	
-	@Autowired
+//	@Autowired(required=true) // 使用多数据源-注释此处
 	private UserMapper userMapper;
 	
-	@Autowired
+	@Autowired(required=true)
 	private UserJpaDao userJpaDao;
 	
 	

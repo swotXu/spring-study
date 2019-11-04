@@ -1,4 +1,4 @@
-package com.swotxu.dome1.controller;
+package com.swotxu.demo1.controller;
 
 import java.util.HashMap;
 import java.util.Map;
