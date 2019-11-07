@@ -4,10 +4,16 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.scheduling.annotation.EnableAsync;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 import com.swotxu.demo3.datasource.DBConfig1;
 import com.swotxu.demo3.datasource.DBConfig2;
 
+// 开启异步话
+@EnableAsync
+// 开启任务调度
+//@EnableScheduling
 // 开启注解配置扫描
 @EnableConfigurationProperties(value = { DBConfig1.class, DBConfig2.class })
 // jpa

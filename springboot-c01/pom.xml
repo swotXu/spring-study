@@ -53,6 +53,18 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-jta-atomikos</artifactId>
 		</dependency>
+		<!-- log4j -->
+		<dependency>
+			<groupId>log4j</groupId>
+  			<artifactId>log4j</artifactId>
+  			<version>1.2.17</version>
+		</dependency>
+		<!-- aop -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-aop</artifactId>
+		</dependency>
+		
 		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -68,7 +80,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>com.vking.tspringboot.controller.SampleController</mainClass>
+                    <mainClass>com.swotxu.SpringBootApplication</mainClass>
                 </configuration>
                 <version>1.4.2.RELEASE</version>
                 <executions>
@@ -81,18 +93,21 @@
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-war-plugin</artifactId>
+                <!-- <artifactId>maven-war-plugin</artifactId> -->
+                <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                    <!-- <failOnMissingWebXml>false</failOnMissingWebXml> -->
+                    <source>1.8</source>
+					<target>1.8</target>
                 </configuration>
             </plugin>
         </plugins>
-        <resources>
-            <!-- 打包时将jsp文件拷贝到META-INF目录下-->
+        <!-- <resources>
+            打包时将jsp文件拷贝到META-INF目录下
             <resource>
-                <!-- 指定resources插件处理哪个目录下的资源文件 -->
+                指定resources插件处理哪个目录下的资源文件
                 <directory>src/main/webapp</directory>
-                <!--注意此次必须要放在此目录下才能被访问到-->
+                注意此次必须要放在此目录下才能被访问到
                 <targetPath>META-INF/resources</targetPath>
                 <includes>
                     <include>**/**</include>
@@ -112,6 +127,6 @@
                 </includes>
                 <filtering>false</filtering>
             </resource>
-        </resources>
+        </resources> -->
     </build>
 </project>

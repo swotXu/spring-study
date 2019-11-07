@@ -2,6 +2,7 @@ package com.swotxu.demo3.controller;
 
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,6 +15,8 @@ import com.swotxu.demo3.test02.entity.RoleTest02;
 
 @RestController
 public class TestController {
+	private static Logger logger = Logger.getLogger(TestController.class);
+	
 	@Autowired
 	private TestService testService;
 	
@@ -24,6 +27,7 @@ public class TestController {
 
 	@RequestMapping("/findById01")
 	public String findById01(Integer id) {
+		logger.info("=== findById01 开始 === id:" + id);
 		System.out.println("findById01 开始");
 		UserTest01 findByID = dBWorldUserMapper.findByID(id);
 		return findByID.toString();
